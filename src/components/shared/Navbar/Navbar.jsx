@@ -4,7 +4,7 @@ const Navbar = () => {
   return (
     <div className="bg-base-100 shadow-sm py-2">
       <div className="navbar container mx-auto">
-        <div className="navbar-start">
+        <div className="navbar-start gap-4 lg:gap-0">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
               <svg
