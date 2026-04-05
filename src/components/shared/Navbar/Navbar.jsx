@@ -1,6 +1,42 @@
 import React from "react";
+import { NavLink } from "react-router";
 
 const Navbar = () => {
+  const links = (
+    <>
+      <li>
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            `font-semibold text-sm  md:text-lg opacity-80  ${isActive ? " border border-[#23BE0A]  text-[#23BE0A] " : " "}}`
+          }
+        >
+          Home
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/books"
+          className={({ isActive }) =>
+            `font-semibold text-sm  md:text-lg opacity-80   ${isActive ? " border border-[#23BE0A]  text-[#23BE0A] " : " "}}`
+          }
+        >
+          Listed Books
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/page-read"
+          className={({ isActive }) =>
+            `font-semibold text-sm  md:text-lg opacity-80   ${isActive ? " border border-[#23BE0A]  text-[#23BE0A] " : " "}}`
+          }
+        >
+          Pages to Read
+        </NavLink>
+      </li>
+    </>
+  );
+
   return (
     <div className="bg-base-100 shadow-sm py-2">
       <div className="navbar container mx-auto">
@@ -27,30 +63,14 @@ const Navbar = () => {
               tabIndex="-1"
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
-              <li className="font-semibold text-lg">
-                <a>Home</a>
-              </li>
-              <li className="font-semibold text-lg">
-                <a>Listed Books</a>
-              </li>
-              <li className="font-semibold text-lg">
-                <a>Pages to Read</a>
-              </li>
+              {links}
             </ul>
           </div>
           <a className="text-[28px] font-bold">Book Vibe</a>
         </div>
         <div className="navbar-center hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 text-[#131313] opacity-80">
-            <li className="font-semibold text-lg">
-              <a>Home</a>
-            </li>
-            <li className="font-semibold text-lg">
-              <a>Listed Books</a>
-            </li>
-            <li className="font-semibold text-lg">
-              <a>Pages to Read</a>
-            </li>
+          <ul className="menu menu-horizontal px-1  opacity-80 space-x-2">
+            {links}
           </ul>
         </div>
         <div className="navbar-end gap-4">
