@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLoaderData, useParams } from "react-router";
 
 const BookDetails = () => {
@@ -18,6 +18,21 @@ const BookDetails = () => {
     publisher,
     yearOfPublishing,
   } = findBook;
+
+  const [storeBook, setStoreBook] = useState([]);
+
+  const handleBookReadBtn = (currentBook) => {
+    const isExist = storeBook.find(
+      (book) => book.bookId === currentBook.bookId,
+    );
+    if (isExist) {
+      alert("The book is already exist");
+    } else {
+      setStoreBook([...storeBook, currentBook]);
+    }
+
+    console.log(currentBook, storeBook, "book");
+  };
 
   return (
     <div className="container mx-auto pt-12">
@@ -89,7 +104,12 @@ const BookDetails = () => {
             </div>
           </div>
           <div className="card-actions justify-start mt-10 gap-4">
-            <button className="btn btn-lg rounded-lg ">Mark as Read</button>
+            <button
+              onClick={() => handleBookReadBtn(findBook)}
+              className="btn btn-lg rounded-lg "
+            >
+              Mark as Read
+            </button>
             <button className="btn btn-lg text-white rounded-lg bg-[#50B1C9]">
               Add to Wishlist
             </button>
