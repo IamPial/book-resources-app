@@ -89,9 +89,9 @@ const BookDetails = () => {
             </div>
           </div>
           <div className="card-actions justify-start mt-10 gap-4">
-            <button className="btn btn-lg rounded-lg ">Read</button>
+            <button className="btn btn-lg rounded-lg ">Mark as Read</button>
             <button className="btn btn-lg text-white rounded-lg bg-[#50B1C9]">
-              Wishlist
+              Add to Wishlist
             </button>
           </div>
         </div>
