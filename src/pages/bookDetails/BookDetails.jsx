@@ -20,7 +20,7 @@ const BookDetails = () => {
     yearOfPublishing,
   } = findBook;
 
-  const { handleBookReadBtn } = useContext(AllBookContext);
+  const { handleBookReadBtn, handleWishListBtn } = useContext(AllBookContext);
 
   return (
     <div className="container mx-auto pt-12">
@@ -98,7 +98,10 @@ const BookDetails = () => {
             >
               Mark as Read
             </button>
-            <button className="btn btn-lg text-white rounded-lg bg-[#50B1C9]">
+            <button
+              onClick={() => handleWishListBtn(findBook)}
+              className="btn btn-lg text-white rounded-lg bg-[#50B1C9]"
+            >
               Add to Wishlist
             </button>
           </div>
