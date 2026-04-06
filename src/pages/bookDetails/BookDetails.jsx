@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { useLoaderData, useParams } from "react-router";
+import { AllBookContext } from "../../contexts/BookContext";
 
 const BookDetails = () => {
   const { id } = useParams();
@@ -19,20 +20,7 @@ const BookDetails = () => {
     yearOfPublishing,
   } = findBook;
 
-  const [storeBook, setStoreBook] = useState([]);
-
-  const handleBookReadBtn = (currentBook) => {
-    const isExist = storeBook.find(
-      (book) => book.bookId === currentBook.bookId,
-    );
-    if (isExist) {
-      alert("The book is already exist");
-    } else {
-      setStoreBook([...storeBook, currentBook]);
-    }
-
-    console.log(currentBook, storeBook, "book");
-  };
+  const { handleBookReadBtn } = useContext(AllBookContext);
 
   return (
     <div className="container mx-auto pt-12">
