@@ -10,7 +10,7 @@ const AllBooks = () => {
       <h2 className="font-playfair font-bold text-[40px] mb-9 text-center">
         Books
       </h2>
-      <div className="grid grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {books.map((book) => {
           return <BookCard key={book.bookId} book={book} />;
         })}
