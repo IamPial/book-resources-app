@@ -1,12 +1,25 @@
-import React, { useContext } from "react";
-import { AllBookContext } from "../../contexts/BookContext";
+import React from "react";
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import "react-tabs/style/react-tabs.css";
+import ReadBooks from "../../components/ListedBooks/ReadBooks";
+import WishListBooks from "../../components/ListedBooks/WishListBooks";
 
 const Books = () => {
-  const { storeBook } = useContext(AllBookContext);
-  console.log(storeBook, "storeBook");
   return (
-    <div>
-      <h1 className="text-2xl bg-red-600">Books</h1>
+    <div className="container mx-auto mt-14">
+      <Tabs>
+        <TabList>
+          <Tab>Read Books</Tab>
+          <Tab>Wishlist Books</Tab>
+        </TabList>
+
+        <TabPanel>
+          <ReadBooks />
+        </TabPanel>
+        <TabPanel>
+          <WishListBooks />
+        </TabPanel>
+      </Tabs>
     </div>
   );
 };
