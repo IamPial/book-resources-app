@@ -16,9 +16,7 @@ const ReadBooks = ({ sortBy }) => {
         );
         setFilteredList(sortedData);
       } else if (sortBy === "rating") {
-        const sortedData = [...readList].sort((a, b) => {
-          a.rating - b.rating;
-        });
+        const sortedData = [...readList].sort((a, b) => a.rating - b.rating);
         setFilteredList(sortedData);
       }
     }
