@@ -5,7 +5,6 @@ import Card from "../ui/Card";
 
 const ReadBooks = ({ sortBy }) => {
   const { readList } = useContext(AllBookContext);
-  console.log(readList, "unsortedData");
   const [filteredList, setFilteredList] = useState(readList);
 
   useEffect(() => {
