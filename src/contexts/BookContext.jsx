@@ -1,17 +1,26 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
+import {
+  addAllReadListBook,
+  getAllReadListBook,
+} from "../utils/LocalReadListDB";
+import {
+  addAllWishListBook,
+  getAllWishListBook,
+} from "../utils/LocalWishListDB";
 
 export const AllBookContext = createContext();
 
 const BookContext = ({ children }) => {
-  const [readList, setReadList] = useState([]);
-  const [wishList, setWishList] = useState([]);
+  const [readList, setReadList] = useState(() => getAllReadListBook());
+  const [wishList, setWishList] = useState(() => getAllWishListBook());
 
   const handleBookReadBtn = (currentBook) => {
     const isExist = readList.find((book) => book.bookId === currentBook.bookId);
     if (isExist) {
       toast.error("The book is already exist");
     } else {
+      addAllReadListBook(currentBook);
       toast.success(`${currentBook.bookName} is added to the read list`);
       setReadList([...readList, currentBook]);
     }
@@ -30,6 +39,7 @@ const BookContext = ({ children }) => {
     if (isExist) {
       toast.error("The book is already exist");
     } else {
+      addAllWishListBook(currentBook);
       toast.success(`${currentBook.bookName} is added to the wishlist`);
       setWishList([...wishList, currentBook]);
     }
