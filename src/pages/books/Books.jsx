@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import { IoIosArrowDown } from "react-icons/io";
@@ -6,6 +6,8 @@ import ReadBooks from "../../components/ListedBooks/ReadBooks";
 import WishListBooks from "../../components/ListedBooks/WishListBooks";
 
 const Books = () => {
+  const [sortBy, setSortBy] = useState("");
+
   return (
     <div className="container mx-auto mt-8">
       <div className="bg-[#f3f3f3] py-8 flex justify-center items-center rounded-lg">
@@ -25,10 +27,10 @@ const Books = () => {
             tabIndex="-1"
             className="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow-sm"
           >
-            <li>
+            <li onClick={() => setSortBy("pages")}>
               <a>Pages</a>
             </li>
-            <li>
+            <li onClick={() => setSortBy("rating")}>
               <a>Rating</a>
             </li>
           </ul>
@@ -42,10 +44,10 @@ const Books = () => {
         </TabList>
 
         <TabPanel>
-          <ReadBooks />
+          <ReadBooks sortBy={sortBy} />
         </TabPanel>
         <TabPanel>
-          <WishListBooks />
+          <WishListBooks sortBy={sortBy} />
         </TabPanel>
       </Tabs>
     </div>
