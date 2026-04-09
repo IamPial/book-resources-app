@@ -9,7 +9,7 @@
 
 ##  Live Demo
 
-🔗 [(https://book-resources-app.vercel.app/)]
+🔗 https://book-resources-app.vercel.app/
 
 ---
 
