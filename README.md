@@ -174,6 +174,6 @@ This project is licensed under the [MIT License](./LICENSE).
 - GitHub: [IamPial](https://github.com/IamPial)
 - LinkedIn: [Pial Uddin](https://linkedin.com/in/pial-uddin)
 
----
 
-<p align="center">Made with ❤️ and ☕ | Happy Reading! 📚</p>)*
+
+
