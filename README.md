@@ -1,6 +1,6 @@
 # 📚 Book Vibe — Your Personal Reading Companion
 
-![BookVibe Banner](./public/bookVibe.png)
+/bookVibe.png
 
 > **BookVibe** is a modern, responsive book management web application built with React. Discover books, track your reading progress, and curate your personal wishlist — all in one beautifully designed platform.
 
